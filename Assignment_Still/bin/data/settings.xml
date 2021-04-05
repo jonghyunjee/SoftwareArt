@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<group>
+	<interval>50</interval>
+	<curvature>50</curvature>
+	<alpha_offset>100</alpha_offset>
+	<offset2>1000</offset2>
+	<RGBA>127, 127, 127, 2.60204</RGBA>
+	<toggle>0</toggle>
+	<alphaValue>1</alphaValue>
+</group>
