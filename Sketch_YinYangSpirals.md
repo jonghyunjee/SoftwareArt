@@ -15,4 +15,4 @@ First, I tried to break down the symbol in 6 shapes: 2 big circles, 2 small circ
 
 ## Reflection
 
-
+Cyclic animation for this sketch produces dynamic and hypnotic visuals. What's interesting, perhaps, is that the code for this cycle motion is fairly simple and straightforward. I think the downer is that the dynamics are a little bit standardized and thus expectable after a single loop. To make it *better every loop* I think adding more random/noise might instill liveliness on this sketch. 
