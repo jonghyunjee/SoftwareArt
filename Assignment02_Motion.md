@@ -7,15 +7,29 @@ jj2171@nyu.edu
 
 ## Introduction
 
-[Dan Buzzo's Tutorial on Sinewave Animation](https://youtu.be/kYejiSrzFzs?list=PL6QF0yo3Zj7DbN76C5-_6VCDF5CPBIz6l) explores a simple yet powerful way to visualize sine waves in OpenFrameworks. For my first assignment, I wanted to experiment with a variety of parameters that alter the shapes of the sketch. Instead of visualizing specific shapes, I tried to give some random tweaks to the code and see how everything unfolds. 
-
-For this week's assignment, I wanted to expand my previous sketch [Yin-Yang Spirals] () by interpreting the idea of Yin-Yang in the context of digitality. As a well-known symbol of harmony in natural transformation, Yin-Yang visualizes the core principles of Taoism—one of the ancient Chinese philosophies. Taoists have used this symbol to describe how seemingly distant or opposite energies may be complementary, interconnected, and interdependent in the natural world. They view the universe as a complex blend of the cycles of Yin (receptive) and Yang (active), which can be seen in all forms of change and difference.
+For this week's assignment, I wanted to expand my previous sketch [Yin-Yang Spirals] (https://github.com/jonghyunjee/SoftwareArt/blob/main/Sketch_YinYangSpirals.md) by interpreting the idea of Yin-Yang in the context of digitality. As a well-known symbol of harmony in natural transformation, Yin-Yang visualizes the core principles of Taoism—one of the ancient Chinese philosophies. Taoists have used this symbol to describe how seemingly distant or opposite energies may be complementary, interconnected, and interdependent in the natural world. They view the universe as a complex blend of the cycles of Yin (receptive) and Yang (active), which can be seen in all forms of change and difference.
 
 What particularly interests me is that we can also interpret this Yin-Yang as a “binary symbol” of the digital world, in which everything is composed of 0 and 1. In a sense, the digital world can be deemed a metaphor of Yin and Yang, as zero and one—nothingness (無) and thingness (有)—interrelate to one another and form into all different types of information and data. I intended to visualize this parallel between Taoism and the digital world-view, creating a series of visual metaphors of which 0 and 1 continuously embody and morph into natural dualities.
 
 ## Work Process
 
+![yinyang](https://user-images.githubusercontent.com/50460806/115202667-962e0580-a131-11eb-8cae-44c59a7bb0f7.png)
 
+In my previous sketch, I used arc and circle functions to draw a yin-yang shape. My original plan was to get a boundary of this path and fill it with strings of 0 and 1. And yet, it was pretty challenging to trace the boundary of this shape because it consists of several smaller paths. So instead, I replaced my shape with the image above and grayscaled it to get color values of each pixel. I referred to this forum [RGB data from ofImage] (https://forum.openframeworks.cc/t/rbg-data-from-ofimage/1645) and created double for loops that store RGB values in an unsigned char. Instead of going pixel by pixel, I updated the counter by 10 pixels to optimize the computation process. I put an if statement within the nested loop so that if a red value is smaller than 127 (darker), it will draw a text string that is either 0 or 1. A digit is randomly assigned between these two and thus it keeps flickering when called in draw function. 
+
+![yinyang](https://user-images.githubusercontent.com/50460806/115205106-2bca9480-a134-11eb-9845-4fa2b43160d4.gif)
+
+Once the digital yin-yang sign is done, I applied several rotate functions to keep it rotating along its local x and y axis. What I had envisioned was to experiment with these digits. I wanted them to be dispersed, morph into different form, and turn back into its original yin-yang shape at the end of the loop. However, time was scarce and so my skill. I need to further research on how to manipulate these 0s and 1s. As a workaround, I created a separate spiral that consists of 0s and 1s. I wanted to visualize a twirling array of digits orbiting around the yin-yang sign. I referred to the chapter of the OF Book [Intro to Graphics.] (http://openframeworks.kr/ofBook/chapters/intro_to_graphics.html) I modified this source code to regularly clear the screen, using a transparent rectangle and draw a spiral. Whereas the source code generates a series of rectangles, I replaced that part with drawString() function that generates digits instead. 
+
+<iframe src="https://player.vimeo.com/video/538567132" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<iframe src="https://player.vimeo.com/video/538567584" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+As a result, strings of 0 and 1 are orbiting the flickering yin-yang sign, which also consists of 0 and 1. 
+
+<iframe src="https://player.vimeo.com/video/538581919" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+If the ofBackground() function is commented out in a draw function, it generates some interesting visuals too. Feels like a digital eye of truth. 
 
 ## Reflection
 
