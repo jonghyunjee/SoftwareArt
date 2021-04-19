@@ -23,7 +23,7 @@ Once the digital yin-yang sign is done, I applied several rotate functions to ke
 
 https://vimeo.com/538567132
 
-https://vimeo.com/538581919
+https://vimeo.com/538567584
 
 As a result, strings of 0 and 1 are orbiting the flickering yin-yang sign, which also consists of 0 and 1. 
 
