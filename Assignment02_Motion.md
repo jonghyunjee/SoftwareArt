@@ -21,13 +21,13 @@ In my previous sketch, I used arc and circle functions to draw a yin-yang shape.
 
 Once the digital yin-yang sign is done, I applied several rotate functions to keep it rotating along its local x and y axis. What I had envisioned was to experiment with these digits. I wanted them to be dispersed, morph into different form, and turn back into its original yin-yang shape at the end of the loop. However, time was scarce and so my skill. I need to further research on how to manipulate these 0s and 1s. As a workaround, I created a separate spiral that consists of 0s and 1s. I wanted to visualize a twirling array of digits orbiting around the yin-yang sign. I referred to the chapter of the OF Book [Intro to Graphics.](http://openframeworks.kr/ofBook/chapters/intro_to_graphics.html) I modified this source code to regularly clear the screen, using a transparent rectangle and draw a spiral. Whereas the source code generates a series of rectangles, I replaced that part with drawString() function that generates digits instead. 
 
-![yinyang1](https://vimeo.com/538567132)
+(https://vimeo.com/538567132)
 
-![yinyang2](https://vimeo.com/538581919)
+(https://vimeo.com/538581919)
 
 As a result, strings of 0 and 1 are orbiting the flickering yin-yang sign, which also consists of 0 and 1. 
 
-![yinyang3](https://vimeo.com/538581919)
+(https://vimeo.com/538581919)
 
 If the ofBackground() function is commented out in a draw function, it generates some interesting visuals too. Feels like a digital eye of truth. 
 
