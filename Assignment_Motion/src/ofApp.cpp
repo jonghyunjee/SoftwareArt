@@ -54,7 +54,7 @@ void ofApp::draw(){
             }
     ofPopMatrix();
     
-    // reverse the contrast  over time
+    // reverse the contrast over time
     ofColor darkColor(0,0,0,255);  // opaque black
     ofColor lightColor(255,255,255,255);  // opaque white
     float percent = ofMap(cos(time/2.0), -1, 1, 0, 1);  // create a value that oscillates between 0 to 1
@@ -64,7 +64,7 @@ void ofApp::draw(){
     ofColor fgColor = lightColor;  // color for the spiral outlines
     fgColor.lerp(darkColor, percent);  // modifies color in place
 
-    // zemi-clear the screen, using a transparent rectangle
+    // semi-clear the screen, using a transparent rectangle
     ofSetColor(bgColor);
     ofSetRectMode(OF_RECTMODE_CORNER);
     ofFill();
