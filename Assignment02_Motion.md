@@ -15,7 +15,7 @@ What particularly interests me is that we can also interpret this Yin-Yang as a 
 
 ![yinyang](https://user-images.githubusercontent.com/50460806/115202667-962e0580-a131-11eb-8cae-44c59a7bb0f7.png)
 
-In my previous sketch, I used arc and circle functions to draw a yin-yang shape. My original plan was to get a boundary of this path and fill it with strings of 0 and 1. And yet, it was pretty challenging to trace the boundary of this shape because it consists of several smaller paths. So instead, I replaced my shape with the image above and grayscaled it to get color values of each pixel. I referred to this forum [RGB data from ofImage](https://forum.openframeworks.cc/t/rbg-data-from-ofimage/1645) and created double for loops that store RGB values in an unsigned char. Instead of going pixel by pixel, I updated the counter by 10 pixels to optimize the computation process. I put an if statement within the nested loop so that if a red value is smaller than 127 (darker), it will draw a text string that is either 0 or 1. A digit is randomly assigned between these two and thus it keeps flickering when called in draw function. 
+In my previous sketch, I used arc and circle functions to draw a yin-yang shape. My original plan was to get a boundary of this path and fill it with strings of 0 and 1. And yet, it was pretty challenging to trace the boundary of this shape because it consists of several smaller paths. So instead, I replaced my shape with the image above and grayscaled it to get color values of each pixel. I referred to this forum [RGB data from ofImage](https://forum.openframeworks.cc/t/rbg-data-from-ofimage/1645) and created double for loops that store RGB values in an unsigned char. Instead of going pixel by pixel, I updated the counter by 10 pixels to optimize the computation process. I put an if statement within the nested loop so that if a red value is smaller than 127 (darker), it will draw a text string that is either 0 or 1. A digit is randomly assigned between these two and thus it keeps flickering when called in draw function. Reminds me of ASCII art.
 
 ![yinyang](https://user-images.githubusercontent.com/50460806/115205106-2bca9480-a134-11eb-9845-4fa2b43160d4.gif)
 
@@ -29,9 +29,9 @@ As a result, strings of 0 and 1 are orbiting the flickering yin-yang sign, which
 
 https://vimeo.com/538581919
 
-If the ofBackground() function is commented out in a draw function, it generates some interesting visuals too. Feels like a digital eye of truth. 
+If the ofBackground() function is commented out in a draw function, it generates some interesting visuals that keep all the afterimages. Feels like a digital eye of truth. 
 
 ## Reflection
 
-
+I spent too much time on the ideation part. To visualize the parallel between the digital world and yin-yang duality was harder than I had thought. But still, I'm very intrigued with this idea and would like to continue developing this sketch afterwards. On the visual side, I think there's much room for improvement. I limited the color scheme in black and white because of the original shades of the yin-yang symbol. I intended to focus more on harmony than discord, or paradoxically the balance between harmony and discord. I initially used some noise function to control the movement of the spiral, but it easily got too messy. Thus I had to stick with repetitive cyclical motions. If given more time, I would like to create a brief animation that begins with this yin-yang symbol, which in turn disintegrates into digits (entropy?) and morphs into natural forms. The cycle of water, for example, can be a suitable narrative. A bunch of 0s and 1s form a cloud, transform to raindrops, be a part of a river, go underground, flow into an ocean, evaporate and again form a cloud, and so forth. This animation will visualize a *poem* that presents the digital interpretation of Taoism and Yin-Yang duality.
 
