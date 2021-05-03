@@ -3,14 +3,14 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    socialDistance.addListener(this, &ofApp::socialDistChange); //listen to the change of the parameter socialDistance
+    socialDistance.addListener(this, &ofApp::socialDistChange); // listen to the change of the parameter socialDistance
     
     gui.setup();
     gui.add(socialDistance.setup("social distance", 30, 10, 300));
     
     ofBackground(25);
     ofSetBackgroundAuto(true);
-    setupPeople(); //set up the array "people"
+    setupPeople(); // set up the array "people"
     
 }
 
@@ -21,10 +21,6 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
-    float time = ofGetElapsedTimef();
-    
-    ofClear(0);
     
     for (int a = 0; a < people.size(); a++) {
         for (int b = 0; b < people.size(); b++) {
@@ -44,7 +40,7 @@ void ofApp::draw(){
 
 void ofApp::socialDistChange(int & socialDistance){
     
-    setupPeople(); //refresh the array "people" when the GUI is updated
+    setupPeople(); // refresh the array "people" when the GUI is updated
 
 }
 
@@ -52,7 +48,7 @@ void ofApp::socialDistChange(int & socialDistance){
 
 void ofApp::setupPeople(){
     
-    people.clear(); //clear the existing array
+    people.clear(); // clear the existing array
     
     for (int y = socialDistance/2; y < ofGetWindowHeight(); y+= socialDistance) {
         for (int x = socialDistance/2; x < ofGetWindowWidth(); x+= socialDistance) {
