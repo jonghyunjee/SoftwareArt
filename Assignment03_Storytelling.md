@@ -13,7 +13,7 @@ Since the last year, the term “social distancing” has become an example of C
 
 I was primarily inspired by this video clip [Ping Pong Balls and Mouse Traps Demonstrate Social Distancing Impact](https://youtu.be/YxVxc6ccqtQ) by the Ohio Department of Health. I watched this video quite a while ago and thought it succinctly showed why social distancing matters. Browsing around the examples from [Dan Shiffman's Nature of Code rewritten for openFrameworks](https://github.com/superartificial/Nature-Of-Code-Open-Frameworks-Port/tree/master/Nature%20Of%20Code%20OF), I wanted to emulate that experiment in the OpenFrameworks settings. 
 
-The blueprint for my algorithm is to create: 1. A series of motionless balls (individuals) are generated on the canvas, keeping same distance with each other. 2. With a click, a user can put a new ball (carrier) that randomly moves around and change the color of the other balls when collided. 3. A user can reset the social distance between individuals, and see how the idea of social distancing can drastically change the result.
+The blueprint for my algorithm was to create: 1. A series of motionless balls (individuals) generated on the canvas, keeping same distance with each other. 2. With a click, a user can put a new ball (carrier) that randomly moves around and changes the color of the other balls when collided. 3. A user can reset the social distance between individuals, and see how the idea of social distancing can drastically alter the result.
 
 ## Work Process
 
