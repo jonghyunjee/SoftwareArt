@@ -17,25 +17,25 @@ The blueprint for my algorithm was to create: 1. A series of motionless balls (i
 
 ## Work Process
 
-![yinyang](https://user-images.githubusercontent.com/50460806/115202667-962e0580-a131-11eb-8cae-44c59a7bb0f7.png)
+1. Creating Classes
 
-In my previous sketch, I used arc and circle functions to draw a yin-yang shape. My original plan was to get a boundary of this path and fill it with strings of 0 and 1. And yet, it was pretty challenging to trace the boundary of this shape because it consists of several smaller paths. So instead, I replaced my shape with the image above and grayscaled it to get color values of each pixel. I referred to this forum [RGB data from ofImage](https://forum.openframeworks.cc/t/rbg-data-from-ofimage/1645) and created double for loops that store RGB values in an unsigned char. Instead of going pixel by pixel, I updated the counter by 10 pixels to optimize the computation process. I put an if statement within the nested loop so that if a red value is smaller than 127 (darker), it will draw a text string that is either 0 or 1. A digit is randomly assigned between these two and thus it keeps flickering when called in draw function. Reminds me of ASCII art.
+<img width="736" alt="capture1" src="https://user-images.githubusercontent.com/50460806/116861526-31e56880-ac3e-11eb-852e-6ef4be14c908.png">
 
-![yinyang](https://user-images.githubusercontent.com/50460806/115205106-2bca9480-a134-11eb-9845-4fa2b43160d4.gif)
+The first step of this project was to create a class called “Person,” which constructs circles that symbolize individuals. Since I intended to generate an array of motionless balls, I set the initial values of both velocity and acceleration zero. This class also contains a vector "force," which is later used for calculating the force of each collision. A boolean "touched" labels whether a person has contacted with a carrier. I set the maximum velocity to prevent the object’s movement becoming a way too crazier. I specified the radius value as welll, in order to calculate the collision between two objects. 
 
-Once the digital yin-yang sign is done, I applied several rotate functions to keep it rotating along its local x and y axis. What I had envisioned was to experiment with these digits. I wanted them to be dispersed, morph into different form, and turn back into its original yin-yang shape at the end of the loop. However, time was scarce and so my skill. I need to further research on how to manipulate these 0s and 1s. As a workaround, I created a separate spiral that consists of 0s and 1s. I wanted to visualize a twirling array of digits orbiting around the yin-yang sign. I referred to the chapter of the OF Book [Intro to Graphics.](http://openframeworks.kr/ofBook/chapters/intro_to_graphics.html) I modified this source code to regularly clear the screen, using a transparent rectangle and draw a spiral. Whereas the source code generates a series of rectangles, I replaced that part with drawString() function that generates digits instead. 
+The "Carrier" class inherits the "Person," taking the parameters from it except the velocity, location, and boolean "touched." I randomized the velocity of a carrier because a newly added carrier requires some degree of initial velocity. The location (should have named it position) receives the x-y coordinate from a mouse click. And of course, the boolean state should be different from the parent class so that a newly added person automatically becomes a carrier.
 
-https://vimeo.com/538567132
+2. Force Functions
 
-https://vimeo.com/538567584
+I referred to [NoC 2.1: Forces](https://github.com/superartificial/Nature-Of-Code-Open-Frameworks-Port/tree/master/Nature%20Of%20Code%20OF/NOC2_1__Forces) get the idea of how to calculate and apply forces accordingly. 
 
-As a result, strings of 0 and 1 are orbiting the flickering yin-yang sign, which also consists of 0 and 1. 
+<img width="752" alt="capture2" src="https://user-images.githubusercontent.com/50460806/116863037-a4574800-ac40-11eb-9a06-3112dd55886a.png">
 
-https://vimeo.com/538581919
-
-If the ofBackground() function is commented out in a draw function, it generates some interesting visuals that keep all the afterimages. Feels like a digital eye of truth. 
+The applyForce() function which allows to update the acceleration value when the collision happens. The checkCollision() function below detects colliding objects on the canvas, and update the vector movement of these objects like that of a billiards table. When the state of the other object is “touched,” the collided one  also becomes “touched.” Once a white circle (uncontacted) collides with a red circle (carrier), the force value gets updated by subtracting the position values.
 
 ## Reflection
 
-I spent too much time on the ideation part. To visualize the parallel between the digital world and yin-yang duality was harder than I had thought. But still, I'm very intrigued with this idea and would like to continue developing this sketch afterwards. On the visual side, I think there's much room for improvement. I limited the color scheme in black and white because of the original shades of the yin-yang symbol. I intended to focus more on harmony than discord, or paradoxically the balance between harmony and discord. I initially used some noise function to control the movement of the spiral, but it easily got too messy. Thus I had to stick with repetitive cyclical motions. If given more time, I would like to create a brief animation that begins with this yin-yang symbol, which in turn disintegrates into digits (entropy?) and morphs into natural forms. The cycle of water, for example, can be a suitable narrative. A bunch of 0s and 1s form a cloud, transform to raindrops, be a part of a river, go underground, flow into an ocean, evaporate and again form a cloud, and so forth. This animation will visualize a *poem* that presents the digital interpretation of Taoism and Yin-Yang duality.
+I think my project has a lot of room for improvement, both in terms of visual components and future application. It might be further developed into a sort of game, with more human-like objects and more delicate system of infection (latent period, recovery, etc.)
+
+It was also interesting that, once the canvas is filled with red circles, they rarely cease to the dead-stop but constantly hitting each other. I think this model, if equipped with more physics, can be a good sketch to model the development of entropy. 
 
